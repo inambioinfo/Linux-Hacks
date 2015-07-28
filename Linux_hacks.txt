@@ -1,0 +1,14 @@
+# Remove ^M when converting LINUX to MAC files:
+tr '\r' '\n' < oldfile > newfile
+
+# Read specific line from file:
+head -84 a.txt | tail -1
+
+# Duplicated occurences:
+uniq -d file.txt
+
+# Sort fastq by sequence length:
+cat sequences.oneline.fasta | perl -e 'while (<>) {$h=$_; $s=<>; $seqs{$h}=$s;} foreach $header (reverse sort {length($seqs{$a}) <=> length($seqs{$b})} keys %seqs) {print $header.$seqs{$header}}' > sequences.oneline.biggest1st.fasta
+
+# Concatenate csv files by adding newline at the end of each of file
+for f in *.csv; do cat "${f}"; echo; done > sample.csv
