@@ -12,3 +12,6 @@ cat sequences.oneline.fasta | perl -e 'while (<>) {$h=$_; $s=<>; $seqs{$h}=$s;} 
 
 # Concatenate csv files by adding newline at the end of each of file
 for f in *.csv; do cat "${f}"; echo; done > sample.csv
+
+# compress multiple files into one
+tar -czvf compressed.tar.gz *.txt
