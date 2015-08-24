@@ -1,0 +1,1 @@
+sed 's/[.][0-9]*\t/\t/g' sample_in.txt > sample_out.txt
