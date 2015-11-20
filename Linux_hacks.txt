@@ -15,3 +15,6 @@ for f in *.csv; do cat "${f}"; echo; done > sample.csv
 
 # compress multiple files into one
 tar -czvf compressed.tar.gz *.txt
+
+# remove files of a particular pattern in a directory
+find /path/to/directory -type f -name '*pattern*' -delete
